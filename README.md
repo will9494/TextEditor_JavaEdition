@@ -2,11 +2,11 @@
 
 Editor de texto simple, inspirado en Notepad++.
 
-![Imagen1](/screenshots/Captura1.PNG)
+![Imagen1](https://github.com/will9494/TextEditor_JavaEdition/blob/master/src/screenshots/Captura1.PNG)
 
-![Imagen2](/screenshots/Captura1.PNG)
+![Imagen2](https://github.com/will9494/TextEditor_JavaEdition/blob/master/src/screenshots/Captura2.PNG)
 
-![Imagen3](/screenshots/test.gif)
+![Imagen3](https://github.com/will9494/TextEditor_JavaEdition/blob/master/src/screenshots/test.gif)
 
 ### Entorno de Programación
 
