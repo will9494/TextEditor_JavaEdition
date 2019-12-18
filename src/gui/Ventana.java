@@ -48,8 +48,7 @@ import java.util.ArrayList;
 import java.awt.Toolkit;
 
 public class Ventana implements ActionListener {
-	public JFrame frmSintax;
-	public Find frameFind;
+	public JFrame frmEditor;
 	private JPanel panel;
 	private JMenuBar menuBar;
 	private JMenuBar menuBar_1;
@@ -103,19 +102,18 @@ public class Ventana implements ActionListener {
 	 */
 	private void initialize() {
 		Ventana.informacion="Autor:  William Fernando Valladares Muñoz\n";
-		Ventana.informacion+="CustomTextEditor\n";
+		Ventana.informacion+="TextEditor\n";
 		Ventana.informacion+="Versión: 1.0\n";
 		
-		frmSintax = new JFrame();		
-		frmSintax.setTitle("SINTAX");
-		frmSintax.setIconImage(Toolkit.getDefaultToolkit().getImage(Ventana.class.getResource("/GUI/Images/Run.png")));
-		frmSintax.setBounds(100, 100, 645, 391);
-		frmSintax.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frmEditor = new JFrame();
+		frmEditor.setTitle("TextEditor");
+		frmEditor.setIconImage(Toolkit.getDefaultToolkit().getImage(Ventana.class.getResource("/GUI/Images/Run.png")));
+		frmEditor.setBounds(100, 100, 645, 391);
+		frmEditor.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-		
 		menuBar = new JMenuBar();
 		menuBar.setBackground(SystemColor.activeCaptionBorder);
-		frmSintax.setJMenuBar(menuBar);
+		frmEditor.setJMenuBar(menuBar);
 		
 		mnNewMenu = new JMenu("Archivo");
 		mnNewMenu.setBackground(SystemColor.activeCaptionBorder);
@@ -175,7 +173,7 @@ public class Ventana implements ActionListener {
 		mnAyuda.add(mbtnInfo);
 		
 		panel = new JPanel();
-		frmSintax.getContentPane().add(panel, BorderLayout.CENTER);
+		frmEditor.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(new BorderLayout(0, 0));
 		
 		menuBar_1 = new JMenuBar();
@@ -203,7 +201,7 @@ public class Ventana implements ActionListener {
 		menuBar_1.add(layeredPane_1);
 		layeredPane_1.setLayout(new BorderLayout(0, 0));
 		
-		lblNewLabel = new JLabel("  CustomTextEditor");
+		lblNewLabel = new JLabel("  TextEditor");
 		menuBar_1.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Consolas", Font.PLAIN, 12));
 		
@@ -274,7 +272,7 @@ public class Ventana implements ActionListener {
 	    
 	    tbtnClose = new JButton("");
 	    tbtnClose.setToolTipText("Cerrar documento");
-	    tbtnClose.setIcon(new ImageIcon(Ventana.class.getResource("/GUI/Images/Error.png")));
+	    tbtnClose.setIcon(new ImageIcon(Ventana.class.getResource("/GUI/Images/Close.png")));
 	    tbtnClose.setBackground(SystemColor.inactiveCaption);
 	    tbtnClose.addActionListener(this);
 	    
@@ -525,20 +523,12 @@ public class Ventana implements ActionListener {
                 robot.keyPress(KeyEvent.VK_V);
 			} catch (Exception e) {}
 		}else if(presionado==tbtnFind){
-			try
-            {
-                frameFind.setVisible(false);
-                frameFind.setVisible(true);
-            }
-            catch (Exception e)
-            {
             	JPanel selected = (JPanel)tabbedPane.getSelectedComponent();
     			JScrollPane scroll = (JScrollPane)selected.getComponent(0);
     			JViewport view = (JViewport)scroll.getComponent(0);
     			JTextArea txt = (JTextArea)view.getComponent(0);
-                frameFind = new Find(txt,txt.getSelectedText(),this);
+                Find frameFind = new Find(txt,txt.getSelectedText(),this);
                 frameFind.setVisible(true);
-            }
 		}
 	}
 	

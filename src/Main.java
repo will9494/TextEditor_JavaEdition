@@ -22,7 +22,7 @@ public class Main {
 					catch (Exception e){}
 					Ventana start = new Ventana();
 
-					start.frmSintax.setVisible(true);
+					start.frmEditor.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

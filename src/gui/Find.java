@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -45,6 +46,7 @@ public class Find extends JFrame implements ActionListener {
 		this.setBounds(100, 100, 451, 221);
 		this.setResizable(false);
 		this.getContentPane().setLayout(null);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -92,6 +94,7 @@ public class Find extends JFrame implements ActionListener {
 		
 		if(presionado==btnCerrar){
 			this.setVisible(false);
+			this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 		}else if(presionado==btnBuscar){
 			try
             {
